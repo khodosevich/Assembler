@@ -1,0 +1,45 @@
+#include <iostream> 
+#include <locale.h> 
+#pragma inline
+
+using namespace std;
+
+
+void main(){
+
+	setlocale(LC_ALL, "rus");
+
+	int i = 0;
+
+	float array[10];
+	cout << "Введите массив на 10 элементов" << endl;
+
+	for (i = 0; i < 10; i++) {
+		cin >> array[i];
+	}
+
+	i = 0;
+
+	while (i < 10) {
+		float temp = array[i];
+		_asm {
+			finit
+			fld temp
+			fsin
+			fst temp
+			fwait
+		}
+		array[i] = temp;
+		i++;
+	}
+
+	i = 0;
+
+	cout << "Результат: " << endl;
+
+	for (i = 0; i < 10; i++) {
+		cout << "Синус [" << i << "] - ого" << " элемента массива: " << array[i] << endl;
+	}
+
+
+}
