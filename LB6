@@ -1,5 +1,4 @@
 #include <iostream> 
-#include <locale.h> 
 #pragma inline
 
 using namespace std;
@@ -7,12 +6,12 @@ using namespace std;
 
 void main(){
 
-	setlocale(LC_ALL, "rus");
+
 
 	int i = 0;
 
 	float array[10];
-	cout << "Введите массив на 10 элементов" << endl;
+	cout << "Enter 10 elements" << endl;
 
 	for (i = 0; i < 10; i++) {
 		cin >> array[i];
@@ -38,7 +37,7 @@ void main(){
 	cout << "Результат: " << endl;
 
 	for (i = 0; i < 10; i++) {
-		cout << "Синус [" << i << "] - ого" << " элемента массива: " << array[i] << endl;
+		cout << "Sin [" << i << "] " << " elements of array: " << array[i] << endl;
 	}
 
 
